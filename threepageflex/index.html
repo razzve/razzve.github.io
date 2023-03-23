@@ -1,0 +1,302 @@
+<html>
+<style>
+
+
+  body {
+    background-color: #152b1e;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    font-size: 20;
+    z-index: 100;
+  }
+
+  .menu a {
+    display: inline-block;
+    color: black;
+    text-align:center;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    color: #ffd72f;
+  }
+
+  .sunflowers {
+    width: 100%;
+    height: 1000px;
+    padding-top:100px;
+
+    background-image: url('https://images.unsplash.com/photo-1535222830855-fd60aca7e065?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    color: #ffd72f;
+    font-weight: 900;
+    font-size: 60pt;
+    text-align: center;
+    
+  }
+  .sunflowersBack {
+      content:"";
+      position: absolute;
+      padding-top: 2000px;
+      width: 100%;
+      height: 2000%;
+      z-index:-1;
+
+
+      background-image: url('https://images.unsplash.com/photo-1535222830855-fd60aca7e065?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: grayscale(100%);
+      transform: scaleY(-1);
+
+      color: #ffd72f;
+      font-weight: 900;
+      font-size: 60pt;
+      text-align: center;
+      
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: space-evenly;
+    gap: 10px 50px;
+  }
+
+  .disclaimer{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    
+    width: 50%;
+    height: fit-content;
+    color: white;
+    position: relative;
+    left:25%;
+  }
+
+  .event{
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 50px;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .eventMedia{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .eventImg{
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top:5px;
+    border: 4px solid white;
+    filter:blur(20px);
+  }
+
+  .eventImg:hover{
+    filter:blur(0px);
+  }
+
+  .eventData{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 500px;
+    height: fit-content;
+    color: #292929;
+    margin: 85px;
+    padding: 15px;
+    backdrop-filter: invert() blur(5px);
+  }
+
+  .eventDate{
+    text-align: center;
+  }
+
+  .eventText{
+    text-align: left;
+  }
+
+</style>
+</head><body>
+
+  
+
+  <div class="sunflowers">
+    <h1>НЕТ ВОЙНЕ</h1>
+  </div>
+
+  <div class="sunflowersBack">
+  </div>
+
+  <div class="content">
+  <div class="disclaimer">
+  <h1>NO PUTIN. NO WAR.</h1>
+  <h1> DISCLAIMER: GRAPHIC CONTENT. ALL THE IMAGES HAVE BEEN BLURRED AND WILL ONLY SHOW WHEN HOVERED OVER.</h1>
+  
+  </div>
+
+  <div class="menu">
+    <a href="index.html">TIMELINE</a>
+    <a href="help.html">HOW TO HELP</a>
+    <a href="learn.html">WHERE TO LEARN</a>
+  </div>
+
+  <div class="event" style="margin-top:300px">
+    <div class = "eventData">
+      <div class="eventDate"><h1>02/24/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          putin announces the "special military operation"
+        </h1>
+
+        At 4am (Ukraine time) on February 24th the russian government has released a recording of the president announcing the commencement of the "special military operation" to "demilitarize" and "denazify" Ukraine. This marked the beginning of the aggressive, brutal, and imperialistic invasion. Shortly after the announcement, the northern regions of Ukraine were bombed by the russian troops that have been amassing at the border.
+      </div>
+    </div>
+    <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://cdn.cnn.com/cnnnext/dam/assets/220224015328-vladimir-putin-russia-address-invasion-super-tease.jpg')"></div>
+    </div>
+  </div>
+  <div class="event" style="align-self: center">
+    <div class = "eventData">
+      <div class="eventDate"><h1>03/02/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Ukrainian refugees
+        </h1>  
+
+        Hundreds of thousands of Ukrainians were forced to flee the country, leaving their homes and families behind.
+      </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://cdn.cnn.com/cnn/interactive/2023/02/europe/russia-ukraine-war-timeline/media/images/2022-02_refugees-graphic.webp')"></div>
+      <div class = "eventImg" style="background-image: url('https://image.cnbcfm.com/api/v1/image/107026169-1646658169801-gettyimages-1239002649-AFP_324M7WW.jpeg?v=1677267169&w=740&h=416&ffmt=webp&vtcrop=y')"></div>
+    </div>
+  </div>
+
+  <div class="event" style="align-self: flex-end">
+    <div class = "eventData">
+      <div class="eventDate"><h1>03/09/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Mariupol Hospital Bombings
+        </h1>  
+        Over the course of the Russian invasion, the city of Mariupol became a target of multiple missile attacks, leading to the deaths of 1348 civilians. On march 9th russian troops have launched a brutal, unprovoked missile attack at the centre of the city of Mariupol, destroying several hospitals. </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/%D0%9D%D0%B0%D1%81%D0%BB%D1%96%D0%B4%D0%BA%D0%B8_%D0%BE%D0%B1%D1%81%D1%82%D1%80%D1%96%D0%BB%D1%83_%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%BE%D1%97_%D0%BB%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%96_%D1%82%D0%B0_%D0%BF%D0%BE%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%B1%D1%83%D0%B4%D0%B8%D0%BD%D0%BA%D1%83_%D0%B2_%D0%9C%D0%B0%D1%80%D1%96%D1%83%D0%BF%D0%BE%D0%BB%D1%96%2C_9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B7%D0%BD%D1%8F_2022_%D1%80%D0%BE%D0%BA%D1%83.jpg/672px-thumbnail.jpg')"></div>
+      <div class = "eventImg" style="background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/220309144226-15-mariupol-hospital-bombing-0309.jpg?q=h_1334,w_2000,x_0,y_0/w_1376')"></div>
+    </div>
+  </div>
+
+  <div class="event" style="align-self: center">
+    <div class = "eventData">
+      <div class="eventDate"><h1>03/16/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Mariupol Theater Bombing
+        </h1>  
+        The Donetsk Academic Regional Drama Theatre was destroeyd as a result of a missile strike. The theatre had been used as a shelter for an estimated 500-1200 civilians, including children. The people taking shelter inside had left a sign, well-visible from the air, saying "CHILDREN".
+        </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://media.npr.org/assets/img/2022/03/17/closer-view-of-mariupol-theater_before-bombing_word_children-on-pavement_14march2022_wv2_sq-99403ac8770ac5dc2e4999711867225dceb2e81c-s800-c85.jpg')"></div>
+      <div class = "eventImg" style="background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/146AD/production/_125692638_dce3c16f490c4a970ed43c463cc2215e36a703b3.jpg')"></div>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class = "eventData">
+      <div class="eventDate"><h1>03/20/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Retroville Mall Bombing
+        </h1>  
+
+        An airstike destroyed the Retroville Mall in the centre of Kyiv.
+      </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://i.guim.co.uk/img/media/9942562fef6c66a1345649279c2a7a1a30fc31e2/0_534_8192_4918/master/8192.jpg?width=700&quality=85&auto=format&fit=max&s=35aa83fa2089f9d16751a6e4af7d9187')"></div>
+      </div>
+  </div>
+
+  <div class="event" style="align-self: center">
+    <div class = "eventData">
+      <div class="eventDate"><h1>03/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          The Bucha Massacre
+        </h1>  
+        Throughout the month of March the city of Bucha was under occupation by the russian troops. After the city was freed, data from witnesses, photos, radio message interceptions, and videos taken by drones showed that russian soldiers have violently murdered 320 civilians. People were found dead with signs of torture, tied up, buried.
+
+      </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://s1.reutersmedia.net/resources/r/?m=02&d=20220407&t=2&i=1596676682&w=780&fh=&fw=&ll=&pl=&sq=&r=2022-04-07T191611Z_18289_MRPRC2MHT9ZLI6I_RTRMADP_0_UKRAINE-CRISIS-BUCHA')"></div>
+      <div class = "eventImg" style="background-image: url('https://www.newstatesman.com/wp-content/uploads/sites/2/2022/04/Bucha-2-web.jpeg')"></div>
+    </div>
+  </div>
+
+  <div class="event" style="align-self:flex-end">
+    <div class = "eventData">
+      <div class="eventDate"><h1>04/08/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Krematorsk Train Station Shooting
+        </h1>  
+
+
+        The train station in the city of krematorsk was struck with a missile strike. There were thousands of people at the time of attack. The rocket that struck the station had "FOR CHILDREN" carved into it. 57 civilians have died, including 5 children, 109 people were injured.
+
+        </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://ca-times.brightspotcdn.com/dims4/default/d7e4c69/2147483647/strip/true/crop/5315x3543+0+0/resize/2160x1440!/format/webp/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6d%2F51%2Fee4bb3c64a3ab913a331fec9fea4%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1239831769')"></div>
+      <div class = "eventImg" style="background-image: url('https://ca-times.brightspotcdn.com/dims4/default/7914d4f/2147483647/strip/true/crop/5472x3648+0+0/resize/2160x1440!/format/webp/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F71%2Fb6%2F9a21a6b14c87aaba4665d4eac66c%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1239831878')"></div>
+    </div>
+  </div>
+
+  <div class="event" style="align-self: center">
+    <div class = "eventData">
+      <div class="eventDate"><h1>06/27/2022</h1></div>
+      <div class="eventText">
+        <h1 style="text-align:center">
+          Kremenchug Mall Bombing
+        </h1>  
+        In the middle of the day the 'Amstor' mall in the city of Kremenchug was struck with several missiles, killing 20 people and injuring 59 people.
+        </div>
+      </div>
+      <div class="eventMedia">
+      <div class = "eventImg" style="background-image: url('https://i.guim.co.uk/img/media/68a371ac1a54dfe9ecd686965a8e68e875a32f20/0_0_6720_4480/master/6720.jpg?width=1010&quality=45&auto=format&fit=max&dpr=2&s=83edd28d5404a5fe8b42f1a3aa9b2825')"></div>
+      <div class = "eventImg" style="background-image: url('https://i.guim.co.uk/img/media/0be95c735169c5edd87da238b00e4b178b410594/0_0_6720_4480/master/6720.jpg?width=1010&quality=45&auto=format&fit=max&dpr=2&s=5b2035690a62087612078ac18013094c')"></div>
+    </div>
+  </div>
+
+  <div class="disclaimer" style="backdrop-filter:blur(5px);">
+  <h1> These are only a few of the war crimes committed by the russian army. Never forget the atrocities of the russian invasion.</h1>
+  <h1>NO PUTIN. NO WAR.</h1>
+  </div>
+</div>
+
+</body></html>
