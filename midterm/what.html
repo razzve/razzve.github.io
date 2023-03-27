@@ -27,7 +27,7 @@
     height: 200px;
     width: cover;
     bottom: -10vh;
-    left: 0;
+    right: 0;
     display: flex;
     flex-flow: row nowrap;
     z-index: 100;
@@ -107,7 +107,7 @@
   .title {
     text-align: center;
     margin-top: 100;
-    margin-bottom: 500;
+    margin-bottom: 25%;
 
     font-size: 60px;
     font-weigt: 900;
@@ -135,7 +135,8 @@
     flex-flow: column nowrap;
 
     margin-right: 10%;
-    margin-left: 35%;
+    margin-left: 10%;
+    margin-bottom: 10%;
   }
 
   .eventmedia {
@@ -143,9 +144,16 @@
     flex-flow: row wrap;
     align-self: center;
     justify-content: center;
+    margin: 10px;
   }
 
   .eventvid > iframe {
+    border: 4px solid #efefef;
+    margin: 5px;
+    margin-bottom: 0;
+  }
+
+  .eventvid > img {
     border: 4px solid #efefef;
     margin: 5px;
     margin-bottom: 0;
@@ -206,9 +214,9 @@
       <h1>BALLROOM</h1>
   </div>
   <div class="content">
-    <div class="event">
+    <div class="event" style="align-self: flex-end">
     <div class="eventtitle"> BALLS </div>
-    <div class="eventtext"> <p>The focal point of the Ballroom Scene is a ball. Balls are competitions that gather the members of the ballroom scene to "walk" (perform and compete in) "categories" (various types of competition). </p> </div>
+    <div class="eventtext"> <p>The focal point of the Ballroom Scene is a ball. Balls are competitions that gather the members of the ballroom scene to "walk" (perform and compete in) "categories" (various types of competition), their performance evaluated by a panel of judges (prominent figures in the scene that are selected by the organizers of the ball). </p> </div>
 
     <div class="eventmedia">
       <div class="eventvid">
@@ -222,7 +230,7 @@
 
   <div class="event">
     <div class="eventtitle"> CATEGORIES </div>
-    <div class="eventtext"> <p>The categories that people compete in come in multitudes of forms. They are usually divided into several types. </p><p> In Fashion categories people's "effects" (outfits/style/designs) are evaluated. Examples of Fashion categories include Best Dressed (judging how good one's outfit looks), Labels (judging how expensive one's outfit is and what designers they are wearing), and Bizarre (judging a self-made outfit on how bizarre and crazy it looks). </p> </div>
+    <div class="eventtext"> <p>The categories that people compete in come in multitudes of forms. For comprehension, they can be divided into several types. </p><p> In Fashion categories people's "effects" (outfits/style/designs) are evaluated. Examples of Fashion categories include Best Dressed (judging how good one's outfit looks), Labels (judging how expensive one's outfit is and what designers they are wearing), and Bizarre (judging a self-made outfit on how bizarre and crazy it looks). </p> </div>
     <div class="eventmedia">
       <div class="eventvid">
       <iframe width="280" height="150" src="https://www.youtube.com/embed/EIqy2MXz0ww?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -233,13 +241,72 @@
       <div class="eventmediatext">Labels at The Latex Ball, 2022</div>
     </div>
     <div class="eventvid">
-      <iframe width="280" height="150" src="https://www.youtube.com/embed/lvbrxIlwf6I?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="300" src="https://www.youtube.com/embed/lvbrxIlwf6I?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <div class="eventmediatext">Bizarre at The Icons Galore Ball II, 2022</div>
     </div>
-      
+    </div>
+
+    <div class="eventtext"> <p>In Performance categories people compete in their dancing skills. The dancing categories in ballroom can be split into Old Way (Pop Dip & Spin) – the first created style of Voguing (what you see in Madonna's "Vogue"), New Way – the second created style of Voguing (see the "WHY" page for more details), and Vogue Femme - currently the most popular performance category (probably what you think of when you think of voguing today). </p> </div>
+
+    <div class="eventmedia">
+      <div class="eventvid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lLT_JU9w_K0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="eventmediatext">Pop, Dip & Spin at OTA, 2022</div>
+    </div>
+    <div class="eventvid">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/qGJcZ0kENOo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="eventmediatext">New Way at The Paris Awards Ball, 2017</div>
+    </div>
+    <div class="eventvid">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/OUf7BFWNwTI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="eventmediatext">Performance at OTA, 2022</div>
+    </div>
+    </div>
+
+    <div class="eventtext"> <p>Other category examples include Face (competing in presentation and confidence about your face), Body (competing in presentation and confidence about your body), Sex Siren (competing in sex appeal). </p> </div>
+
+    <div class="eventmedia">
+      <div class="eventvid">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/ky6X4XiqCU0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="eventmediatext">Face at The Unification Ball, 2020</div>
+    </div>
+    <div class="eventvid">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/KQ2E5P1_hf0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="eventmediatext">Team Body at The Latex Ball, 2022</div>
+    </div>
     </div>
   </div>
 
+  <div class="event" style="align-self: center">
+    <div class="eventtitle"> CATEGORY STRUCTURE </div>
+    <div class="eventtext"> <p> When you decide to walk a category, you have to read the category descriptions provided by the ball organizer: every category has a theme – it is "calling for" (requiring) a particular "effect" (look) – and prepare your effect in accordance with this theme.</p> <p>First, you will be walking 10s – you walking alone and the judges evaluating your performance and effect. You either get 10s (pass on) or get chopped (are removed from the competition).</p><p> If you get 10s, next come battles. From this point and until the finale of the category you will be battling another contestant and the judges will vote for the one they liked more. This continues until one person remains. </p> <p> The winner usually receives a cash prize and a trophy. </p></div>
+  </div>
+
+
+  <div class="event" style="align-self: flex-end">
+    <div class="eventtitle" > HOUSES </div>
+    <div class="eventtext"> <p> In ballroom people form families called "houses". This originated in the 1960s when not being straight could lead to a person being kicked out of their home and their family. People with these experiences constituted a large part of ballroom, leading to the creation of ballroom families meant to provide what the biological families couldn't. </p> <p> Then and now ballroom houses serve to provide unity and support. Each member is a part of building and upholding the reputation and status of their house.</p><p>There are certain statuses in ballroom houses, corresponding to the function of the person in this ballroom family: father and mother, princes and princesses, grandparents, overseers, etc.</p><p>These are some examples of influential and recognizable houses in US: House of Oricci, House of Balenciaga, House of Miyake Mugler, House of Labeija. </p></div>
+  </div>
+
+  <div class="event" style="align-self: center">
+    <div class="eventtitle"> MEDIA </div>
+    <div class="eventtext"> <p>If you are interested in consuming some media with well-researched and authentic ballroom representation, check these out:</p></div>
+    <div class="eventmedia" style="width:100%">
+      <div class="eventvid">
+      <img src="img/pose.jpg" style="height: 500px">
+      <div class="eventmediatext">POSE (TV Series), 2018</div>
+    </div>
+    <div class="eventvid">
+      <img src="img/pib.jpg" style="height: 500px">
+      <div class="eventmediatext">Paris is Burning (Documentary), 1990</div>
+    </div>
+    <div class="eventvid">
+      <img src="img/legendary.jpg" style="height: 500px">
+      <div class="eventmediatext">Legendary (Reality TV Show), 2020</div>
+    </div>
+    </div>
+  </div>
+  </div>
 
 </div>
   
