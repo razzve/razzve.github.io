@@ -1,0 +1,168 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    background-image: url("img/back.png");
+    background-color: white;
+    background-size: 100% cover;
+    font-family: 'Lexend';
+    font-size: 20px;
+    font-weight: 400;
+    color: #efefef;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .menucontainer{
+
+    align-self: center;
+    height: 400px;
+    width: cover;
+    top: 80vh;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 100;
+
+    backdrop-filter: blur(1px);
+
+    margin-top: 100px;
+    margin-left: 10%;
+  }
+
+  .menuleft {
+    background-image: url("img/menuleft.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height:400px;
+    width: 140px;
+
+  }
+
+  .menuright {
+    background-image: url("img/menuright.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height:400px;
+    width: 300px;
+  }
+
+  .menutext {
+    position: absolute;
+    visibility: visible;
+    top: 15%;
+    left: 15%;
+    font-size: 50;
+
+    text-align: center;
+  }
+
+  .menucontainer:hover .menutext{
+    visibility: hidden;
+  }
+  .menu{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    visibility: hidden;
+    background-color: white;
+    font-size: 30;
+    width:0;
+    height: 0;
+    order: 4;
+
+  }
+
+  .menucontainer:hover .menu{
+    visibility: visible;
+    order: 0;
+
+    height: 199px;
+    width:fit-content;
+  }
+
+  .menu a {
+    display: inline-block;
+    color: black;
+    text-align:center;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    color: #ffd72f;
+  }
+
+  .title {
+    text-align: center;
+    margin-top: 100;
+    margin-bottom: 500;
+
+    margin-left: 40%;
+
+    font-size: 60px;
+    font-weigt: 900;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    }
+  .eventtext {
+    height: max-content;
+
+    margin-right: 100px;
+    margin-left: 35%;
+    padding: 20px;
+    align-self: center;
+
+    color: black;
+    background-color: #efefef;
+    text-align: center;
+    font-size: 40;
+  }
+
+</style>
+</head><body>
+  <div class="title">
+      <h1>THE</h1>
+      <h1>BALLROOM</h1>
+      <h1>SCENE</h1>
+  </div>
+
+  <div class="content">
+    <div class="eventtext">
+      <p>If you have ever heard of Voguing – Ballroom is where it comes from. The Ballroom Scene is a subculture created by Black and Latinx queer and transgender people as a safe space for expressing one's gender identity and sexuality, fostering artistic competition and unity among members. </p>
+      <p>My name is Mark Oricci and I have been a part of the ballroom scene since 2017. This site is dedicated to educating about and summarizing the history of the scene as well as commending and paying respects to the prominent figures in the scene.</p>
+    </div>
+
+    <div class="menucontainer">
+    <div class="menuleft"><div class="menutext">MENU</div></div>
+  
+    <div class="menuright" style="order:3"></div>
+    <div class="menu">
+      <a href="what.html">WHAT</a>
+      <a href="history.html">WHY</a>
+      <a href="index.html">HOME</a>
+    </div>
+    </div>
+
+  </div>
+
+
+  
+  
+</body></html>

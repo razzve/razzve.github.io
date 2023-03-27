@@ -1,0 +1,414 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    background-image: url("img/back.png");
+    background-color: white;
+    background-size: 100% cover;
+    font-family: 'Lexend';
+    font-size: 20px;
+    font-weight: 400;
+    color: #efefef;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .menucontainer{
+    position: fixed;
+    height: 200px;
+    width: cover;
+    top: 80vh;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 100;
+
+    backdrop-filter: blur(1px);
+  }
+
+  .menuleft {
+    background-image: url("img/menuleft.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height:200px;
+    width: 70px;
+
+  }
+
+  .menuright {
+    background-image: url("img/menuright.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height:200px;
+    width: 150px;
+  }
+
+  .menutext {
+    position: absolute;
+    visibility: visible;
+    top: 25px;
+    left: 27px;
+
+    font-size: 30;
+  }
+
+  .menucontainer:hover .menutext{
+    visibility: hidden;
+  }
+  .menu{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    visibility: hidden;
+    background-color: white;
+    font-size: 20;
+    width:0;
+    height: 0;
+    order: 4;
+
+  }
+
+  .menucontainer:hover .menu{
+    visibility: visible;
+    order: 0;
+
+    height: 100px;
+    width:fit-content;
+  }
+
+  .menu a {
+    display: inline-block;
+    color: black;
+    text-align:center;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    color: #ffd72f;
+  }
+
+  .eventdate > h1 {
+    font-size: 44px;
+    margin: 0;
+    padding: 0;
+    }
+
+
+  .title {
+    text-align: center;
+    margin-top: 100;
+    margin-bottom: 500;
+
+    font-size: 60px;
+    font-weigt: 900;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+
+    margin-left: 35%;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    }
+
+  .chapterheader
+  {
+    text-align: center;
+    
+  }
+
+  .event {
+    display: grid;
+    grid-template-columns: 4fr 0.4fr 6fr;
+    grid-template-rows: 15% 85%;
+
+    width: 1200px;
+    height: fit-content;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    align-self: flex-start;
+  }
+
+  .event:nth-child(4n-1){
+    align-self: flex-end;
+  }
+
+  
+
+  .eventback {
+    top: 0;
+    width: 100%;
+    height: 500px;
+    backdrop-filter: blur(50px);
+  }
+  .eventpic {
+    grid-row: 2 / span 2;
+    grid-column: 1;
+
+    width: 512px;
+    
+    padding-left: 70px;
+
+
+
+    
+  }
+
+  .eventpic > img
+  {
+    height: 256px;
+    width: 512px;
+    object-fit: cover;
+
+    border: 6px solid #efefef;
+
+  }
+
+  .eventpic > img:not(:first-of-type)
+  {
+    margin-top: 10;
+  }
+
+  .event:nth-child(4n-1) .eventpic{
+    grid-column: 3;
+    padding-left: 0;
+  }
+
+  .eventdate {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+
+    margin-left: 110px;
+    margin-right: 80px;
+
+    height: max-content;
+    align-self: end;
+    text-align: center;
+
+    color: black;
+    font-weight: 900;
+
+    background-color: #efefef;
+    }
+
+  .event:nth-child(4n-1) .eventdate{
+    grid-column: 3;
+    margin-left: 5%;
+    margin-right: 30%;
+  }
+
+  .eventtext {
+
+    grid-row: 2;
+    grid-column: 3;
+    height: max-content;
+
+    margin-right: 50px;
+    padding: 20px;
+    align-self: center;
+
+    color: black;
+    background-color: #efefef;
+  }
+
+  .event:nth-child(4n-1) .eventtext{
+    grid-column: 1;
+    margin-right: 0;
+  }
+
+
+  .eventpictext {
+    text-align: center;
+    font-size: 12;
+    color: black;
+    background-color: #efefef;
+    width: 80%;
+
+    margin-left: 10%;
+  }
+
+  .event:nth-child(4n-1) .eventpictext{
+    
+  }
+
+  .eventpictext > p {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .eventback {
+    grid-row: 2;
+    grid-column: 3;  
+
+    z-index: -1;
+    height: max-content;
+  }
+
+
+  .transition {
+    height: 512px;
+    margin-top: 40px;
+  }
+
+
+  
+
+</style>
+</head><body>
+  <div class="menucontainer">
+  <div class="menuleft"><div class="menutext">MENU</div></div>
+  
+  <div class="menuright" style="order:3"></div>
+  <div class="menu">
+    <a href="what.html">WHAT</a>
+    <a href="history.html">WHY</a>
+    <a href="index.html">HOME</a>
+  </div>
+</div>
+
+  <div class="title">
+      <h1>THE</h1>
+      <h1>HISTORY</h1>
+  </div>
+  <div class="content">
+    <div class="event">
+      
+      <div class="eventpic">
+        <img src="img/dragball.jpg" >
+        <div class="eventpictext"><p>Crystal LaBeija among with other ball contestants in «The Queen»</p>
+          <p>Lewis Allen Collection, 1968</p>
+        </div>
+        <img src="img/dragball2.jpg" style="filter:grayscale(100%)">
+        <div class="eventpictext"><p>Drag Ball in New York City</p>
+          <p>New York Public Library, 1920s</p>
+        </div>
+      </div>
+      <div class="eventdate">
+        <h1>1920s - 1960s</h1>
+      </div>
+      <div class="eventtext">
+        <p>The 1920s brought about two important precursors to the appearance of the ballroom scene. The Harlem Renaissance and the emergence of Drag Balls. The Harlem Renaissance was a process of the cultural restoration of PoC art, politics, and academics that was centered in Harlem, NYC.</p><p> The Drag Balls were a result of the growing opression of the LGBTQ+ folk that found an outlet for expression in the art of drag. However, the racism was ever-present even in these queer spaces, and PoC contestants were misjudged, harassed, and not welcomed at the Drag Balls.</p><p> This led to the appearance of Balls meant to provide a safe space to queer people of color - the House Balls in Harlem. The growing freedom and expression of Black culture during the Harlem Renaissance fueled the Harlem Ballroom Scene.</p>
+      </div>
+
+      <div class="eventback"> </div>
+    </div>
+
+    <div class="transition">
+        <img src="img/archie1.png" style="margin-left: 25%">
+    </div>
+
+    <div class="event">
+      <div class="eventpic">
+        <img src="img/houseball.jpg" >
+        <div class="eventpictext"><p>Judges' scores at Tanqueray Ball Aids Benefit, 1990</p>
+          <p>Chantal Regnault, 1990</p>
+        </div>
+      </div>
+      <div class="eventdate">
+        <h1>1970s</h1>
+      </div>
+      <div class="eventtext">
+        <p> The first ball in the documented history of ballroom was the first annual House of LaBeija Ball in the early 1970s. Crystal Labeija was very vocal about the prejudices against Black and Latinx ball contestants, and, along with Lottie LaBeija, has created the first ballroom house - the House of Labeija - and the Labeija Ball - to celebrate and provide a safe space for Black abd Latinx trans, gay, and queer people.</p>
+
+        <p> The ball turned out to be a huge success and has paved the way for thousands and thousands of balls in the future.</p>
+      </div>
+    </div>
+
+    <div class="transition">
+        <img src="img/archie2.png" style="margin-left: 25%; transform: scaleX(-1);">
+    </div>
+
+    <div class="event">
+      <div class="eventpic">
+        <img src="img/dupree.jpg" style="filter:grayscale(100%)">
+        <div class="eventpictext"><p>Paris Dupree</p>
+          <p>Paris is Burning, 1990</p>
+        </div>
+
+        <img src="img/willie.jpg" style="filter:grayscale(100%)">
+        <div class="eventpictext"><p>Willi Ninja</p>
+          <p>Paris is Burning, 1990</p>
+        </div>
+
+      </div>
+      <div class="eventdate">
+        <h1>1970s-1980s</h1>
+      </div>
+      <div class="eventtext">
+        <p>The dance style called Vogue was invented in the 1970's by Paris Dupree, a member of ballroom at the time. He was imitating the poses seen in fashion magazines to a beat and bringing this new style of dance to balls and clubs. It was picked up by others and became an integral part of ballroom. </p><p>The style of dance that he invented is now called the Old Way or Pop Dip and Spin (the original name that is also used today). </p>
+      </div>
+    </div>
+
+    <div class="transition">
+        <img src="img/sinia1.png" style="margin-left: 25%; transform: scaleX(-1);">
+    </div>
+    
+    <div class="event">
+      <div class="eventpic">
+        <img src="img/madonna.jpeg" >
+        <div class="eventpictext"><p>Madonna in "Vogue", 1990</p>
+        </div>
+        <img src="img/pburning.jpg" >
+        <div class="eventpictext"><p>Paris is Burning, 1990</p>
+        </div>
+      </div>
+      <div class="eventdate">
+        <h1>1990</h1>
+      </div>
+      <div class="eventtext">
+        <p>As the 1990's came around, the club scene was booming in NYC and, with it, the ballroom culture got more and more exposure and drew increasing curiosity and attention.</p>
+        <p>Madonna happenned to be one such person interested in learning about the ballroom culture and got acquainted with José Gutiérrez - a Dominican American dancer from NYC ballroom who taught her about the culture and the dance style. She then recorded and filmed the music video for "Vogue" that came out in 1990 and featured José along with other ballroom dancers and showcased the voguing side of ballroom to the world.</p>
+      </div>
+    </div>
+
+    <div class="transition">
+        <img src="img/omari1.png" style="margin-left: 20%; transform: scaleX(-1);">
+    </div>
+    
+    <div class="event">
+      <div class="eventpic">
+        <img src="img/aviance.png" >
+      </div>
+      <div class="eventdate">
+        <h1>1990</h1>
+      </div>
+      <div class="eventtext">
+        <p> In 1990's a new twist was spun on the Pop Dip and Spin category – the "new kids" (ballroom members who newly entered the scene at that time) began incorporating geometry, contortioning, flexing, and acrobatics in their performance. It was decided that the Old Way (Pop Dip and Spin) and the emerging New Way were different styles of performance and they were separated into the two dancing categories that are still present in the scene today. </p>
+      </div>
+    </div>
+
+    <div class="transition">
+        <img src="img/leiomy1.png" style="margin-left: 50%;">
+    </div>
+    <div class="event" style="margin-bottom: 10%">
+      <div class="eventpic">
+        <img src="img/sinia.jpg" >
+        <div class="eventpictext">Sinia Alaia, 2002
+        </div>
+      </div>
+        
+      <div class="eventdate">
+        <h1>2000s</h1>
+      </div>
+      <div class="eventtext">
+      <p>In the 2000s, the dancing categories in ballroom saw another huge revision. It became common among Femme Queens (Transgender Women) to incorporate extremely femenine, sexual, sensual movements into their performance, as well as making the existing elements (such as dips and spins) more fluid. This style of performance kept evolving and became recognized as Vogue Femme – yet another dancing category.</p> <p>This is probably what you think about/have seen when referring to voguing. It is now without a doubt the most popular dancing category and it is walked by any and all. Transgender Women of color are at the heart of ballroom culture – they were the first to create the scene as we know it, and they were the first to create the style of performance that the whole world knows as Vogue. This is why we must know the history of Ballroom – to avoid misinterpreting, approppriating, and harming the scene (looking at you, Drag Race).</p>
+      </div>
+    </div>
+  </div>
+  
+</body></html>
