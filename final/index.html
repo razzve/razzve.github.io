@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+	<title>dance help</title>
+	<style>
+		body {
+			font-family: 'Playfair Display', serif;
+			background-color: #F5F5F5;
+			color: #1A1A1A;
+		}
+
+		body:after {
+			content: "";
+			position: fixed;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			border-left: 4px dashed #505050;
+		}
+
+		button {
+		 	background: none;
+		 	border: none;
+		 	padding: 0;
+		 	font-family: 'Playfair Display', serif;
+			color: #F5F5F5;
+			font-size: 2em;
+		}
+
+		button:hover{
+			color: #FFFFC0;
+		}
+
+		.content {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+
+		#header {
+			text-align: center;
+			font-size: 10em;
+			font-weight: bold;
+			padding: 20px;
+			margin-top: 100px;
+			margin-bottom: 500px;
+			background-color: #F5F5F5;
+		}
+
+		#choosewarmup {
+			text-align: center;
+			font-size: 8em;
+			font-weight: bold;
+			padding: 20px;
+			margin-top: 100px;
+			margin-bottom: 200px;
+			background-color: #F5F5F5;
+		}
+
+		#step1 {
+			text-align: center;
+			font-size: 2em;
+			font-weight: bold;
+			padding: 20px;
+			transition: opacity 1s ease-in-out;
+			opacity: 0;
+		}
+
+		#breathing{
+			transition: opacity 1s ease-in-out;
+			opacity: 0;
+		}
+
+		.step {
+			color: #F5F5F5;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			height: 1500px;
+			background-image: var(--gradient, radial-gradient(300px at center, #1A1A1A, #1A1A1A, #F5F5F5));
+		}
+
+		img {
+			width: 200px;
+			height: 200px;
+			transition: transform 0.5s;
+		}
+
+		.warmupchoices{
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			background: #F5F5F5;
+		}
+
+		.btn {
+			position: relative;
+			display: inline-block;
+			background-size: cover;
+			width: 300px;
+			height: 200px;
+			color: #1A1A1A;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			padding-top: 150px;
+			margin: 20px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.btn::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+			filter: blur(5px);
+		}
+
+		.btn:hover::before {
+			opacity: 1;
+			filter: blur(10px);
+		}
+
+		.warmupcontainer {
+			margin-top: 500px;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+		}
+
+		.warmup {
+			width: fit-content;
+			color: #F5F5F5;
+			background-color: #1A1A1A;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+
+
+	    .progress-bar-container {
+	    	padding: 20px;
+	    	margin: 20px;
+	      	width: 30vw;
+	      	height: 20px;
+	      	background-color: #F0F0F0;
+	      	border-radius: 10px;
+	      	overflow: hidden;
+	    }
+
+	    .progress-bar {
+	      	width: 0vw;
+	      	height: 100%;
+	      	background-color: #1A1A1A;
+	      	border-radius: 10px;
+	    }
+
+	    .warmupprison {
+	    	display: none;
+	    	flex-flow: column nowrap;
+	    	align-items: center;
+
+	    }
+
+	</style>
+</head>
+<body>
+	<div id="header">dance practice assistant</div>
+	<div class="content">
+		<div id="breathing" class="step">
+			<div id="step1"><button onclick="breatheButton()"> > breathe < </button></div>
+		</div>
+
+		<div id="choosewarmup">choose a warmup focus</div>
+
+		<div class="warmupchoices" >
+			<button onclick="chooseWarmup('turns')"><div class="btn" style="background-image:url('img/spin.png')">turns</div></button>
+			<button onclick="chooseWarmup('hands')"><div class="btn" style="background-image:url('img/flex.avif'); filter:grayscale(100%); color: #F5F5F5">hands and arms</div></button>
+			<button onclick="chooseWarmup('core')"><div class="btn" style="background-image:url('img/core.webp'); filter:grayscale(100%);">core</div></button>
+			<button onclick="chooseWarmup('stretch')"><div class="btn" style="background-image:url('img/warmup.jpg'); filter:grayscale(100%); color: #F5F5F5">stretching</div></button>
+		</div>
+
+		<div class="warmupcontainer">
+
+			<div class="warmup"><button onclick="startTimer(300, 0)">>  dynamic stretch  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+
+			<div id="handsfocus" class="warmupprison">
+			<div class="warmup"><button onclick="startTimer(300, 1)">>  hands/arms stretch+drill+workshop  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+			</div>
+
+			<div id="corefocus" class="warmupprison">
+			<div class="warmup"><button onclick="startTimer(120, 2)">>  core workout  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+			</div>
+
+			<div class="warmup"><button onclick="startTimer(180, 3)">>  flow warmup  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+
+			<div class="warmup"><button onclick="startTimer(60, 4)">>  balance drills  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+
+			<div id="turnsfocus" class="warmupprison">
+			<div class="warmup"><button onclick="startTimer(120, 5)">>  turn drills  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+			</div>
+
+			<div id="stretchfocus" class="warmupprison">
+			<div class="warmup"><button onclick="startTimer(300, 6)">>  static stretching  <</button></div>
+			<div class="progress-bar-container">
+			<div class="progress-bar"></div>
+			</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script>
+		//function for fading in the title of the webpage
+		function fadeIn(element) {
+			var opacity = 0;
+			var interval = setInterval(function() {
+				if (opacity < 1) {
+					opacity += 0.05;
+					element.style.opacity = opacity;
+				} else {
+					clearInterval(interval);	
+				}
+			}, 100);
+		}
+
+		//function for changing the size of the gradient for the breathing element
+		function updateSize() {
+			var breathingText = document.getElementById('step1')
+	    	currentTime = Date.now();
+	      	elapsedTime = currentTime - startTime;
+	      	percentComplete = elapsedTime / duration;
+	      	if (percentComplete < 0.5) {
+	        	size = minSize + ((maxSize - minSize) * percentComplete * 2);
+	        	breathingText.textContent = "inhale"
+	      	} else {
+	        	size = maxSize - ((maxSize - minSize) * (percentComplete - 0.5) * 2);
+	        	breathingText.textContent = "exhale"
+	      	}
+	      	const gradient = `radial-gradient(${size}px at center, #1A1A1A, #1A1A1A, #F5F5F5)`;
+		  	breathingElement.style.setProperty('--gradient', gradient);
+
+	      	if (elapsedTime < duration) {
+	        	requestAnimationFrame(updateSize);
+	      	}
+	    }
+
+	    //function that sets the current time and updates the size of the gradient
+	    function startBreathing() {
+	      	startTime = Date.now();
+	      	updateSize();
+	    }
+
+
+	    //function to be called from button press which will call the breathing size change at the specified intervals
+	    function breatheButton() {
+	    	startBreathing();
+	    	setInterval(startBreathing, duration);
+	    }
+
+	    //function to set some of the warmup steps visible based on the warmup focus choice
+	    // and blur the choice made
+	    function chooseWarmup(choice) {
+
+	    	if (choice == "core") {
+	    		document.querySelectorAll(".btn")[2].style.filter = "invert()";
+	    		document.getElementById("corefocus").style.display = "flex";
+	    	}
+	    	else if (choice == "turns") {
+	    		document.querySelectorAll(".btn")[0].style.filter = "invert()";
+	    		document.getElementById("turnsfocus").style.display = "flex";
+
+	    	}
+	    	else if (choice == "hands") {
+	    		document.querySelectorAll(".btn")[1].style.filter = "invert()";
+	    		document.getElementById("handsfocus").style.display = "flex";
+	    	}
+	    	else if (choice == "stretch") {
+	    		document.querySelectorAll(".btn")[3].style.filter = "invert()";
+	    		document.getElementById("stretchfocus").style.display = "flex";
+	    	}
+	    }
+
+	    //breathing constants declaration
+		const breathingElement = document.getElementById('breathing');
+    	const duration = 8000; // time in milliseconds
+    	const maxSize = 600;	
+    	const minSize = 299;
+
+    	//breathing variables declaration
+	    let startTime;
+	    let currentTime;
+	    let elapsedTime;
+	    let percentComplete;
+	    let size;
+
+	    //on page load - fade in the header
+		window.onload = function() {
+			var header = document.getElementById('header');
+			fadeIn(header);
+		}
+
+		//animations/transitions based on scrolling
+		window.addEventListener('scroll', function() {
+			var step = document.getElementById('step1');
+			var header = document.getElementById('choosewarmup');
+			var stepcontainer = document.querySelector('.step');
+			var breathing = document.getElementById('breathing');
+
+			var stepdistance = step.getBoundingClientRect().top;
+			var windowHeight = window.innerHeight;
+			
+
+			if (stepdistance < windowHeight) {
+				step.style.opacity = 1;
+				breathing.style.opacity = 1;
+				setTimeout(function() {}, 100);
+				
+			} else {
+				step.style.opacity = 0;
+				breathing.style.opacity = 0;
+				setTimeout(function() {
+				}, 100);
+			}
+		});
+
+		// progress bar for warmup setup
+	    const progressBars = document.querySelectorAll('.progress-bar');
+	    let currBar;
+	    let intervalId;
+	    let progressStartTime;
+	    let progressEndTime;
+	    var progressTotalTime = 5; // in seconds
+
+	    // timer for the progress bar
+	    function startTimer(time, bar) {
+	    	currBar = progressBars[bar];
+	    	progressTotalTime = time;
+	      	progressStartTime = Date.now();
+	      	progressEndTime = progressStartTime + (progressTotalTime * 1000);
+	      	intervalId = setInterval(updateProgressBar, 10);
+	    }
+
+	    // function to update the width of the progress bar based on the timer
+	    function updateProgressBar() {
+	      	const now = Date.now();
+	      	const elapsed = now - progressStartTime;
+	      	const remaining = progressEndTime - now;
+	      	const progress = (elapsed / (progressTotalTime * 1000)) * 100;
+	      	currBar.style.width = `${progress}%`;
+
+	      	if (remaining <= 0) {
+	        	clearInterval(intervalId);
+	      	}
+	    }
+	</script>
+</body>
+</html>
